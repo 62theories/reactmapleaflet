@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from "react"
-
+import axios from "axios"
 import { Map, SVGOverlay, TileLayer } from "./components"
 
 const center = [7.894532454655228, 98.35295134899502]
@@ -19,184 +19,7 @@ export default class SVGOverlayExample extends Component<{}> {
 
       state = {
             mode: "0",
-            change: [
-                  { x: 0, y: 0 },
-                  { x: 0, y: 1 },
-                  { x: 0, y: 2 },
-                  { x: 0, y: 3 },
-                  { x: 0, y: 4 },
-                  { x: 0, y: 5 },
-                  { x: 0, y: 6 },
-                  { x: 0, y: 7 },
-                  { x: 0, y: 8 },
-                  { x: 0, y: 9 },
-                  { x: 0, y: 10 },
-                  { x: 0, y: 11 },
-                  { x: 0, y: 12 },
-                  { x: 0, y: 13 },
-                  { x: 0, y: 14 },
-                  { x: 0, y: 15 },
-                  { x: 0, y: 16 },
-                  { x: 0, y: 17 },
-                  { x: 0, y: 18 },
-                  { x: 0, y: 19 },
-                  { x: 1, y: 19 },
-                  { x: 1, y: 18 },
-                  { x: 1, y: 17 },
-                  { x: 1, y: 16 },
-                  { x: 2, y: 17 },
-                  { x: 2, y: 18 },
-                  { x: 2, y: 19 },
-                  { x: 1, y: 14 },
-                  { x: 1, y: 15 },
-                  { x: 2, y: 16 },
-                  { x: 2, y: 15 },
-                  { x: 1, y: 13 },
-                  { x: 2, y: 14 },
-                  { x: 1, y: 8 },
-                  { x: 1, y: 9 },
-                  { x: 1, y: 10 },
-                  { x: 1, y: 11 },
-                  { x: 1, y: 12 },
-                  { x: 2, y: 13 },
-                  { x: 2, y: 12 },
-                  { x: 2, y: 11 },
-                  { x: 2, y: 10 },
-                  { x: 2, y: 9 },
-                  { x: 1, y: 7 },
-                  { x: 2, y: 8 },
-                  { x: 3, y: 9 },
-                  { x: 3, y: 10 },
-                  { x: 4, y: 10 },
-                  { x: 4, y: 11 },
-                  { x: 4, y: 12 },
-                  { x: 3, y: 12 },
-                  { x: 3, y: 13 },
-                  { x: 3, y: 14 },
-                  { x: 3, y: 15 },
-                  { x: 3, y: 16 },
-                  { x: 3, y: 17 },
-                  { x: 3, y: 18 },
-                  { x: 3, y: 19 },
-                  { x: 4, y: 19 },
-                  { x: 4, y: 15 },
-                  { x: 4, y: 16 },
-                  { x: 4, y: 17 },
-                  { x: 4, y: 18 },
-                  { x: 4, y: 14 },
-                  { x: 4, y: 13 },
-                  { x: 3, y: 11 },
-                  { x: 1, y: 6 },
-                  { x: 2, y: 6 },
-                  { x: 3, y: 6 },
-                  { x: 3, y: 7 },
-                  { x: 2, y: 7 },
-                  { x: 3, y: 8 },
-                  { x: 4, y: 9 },
-                  { x: 4, y: 8 },
-                  { x: 4, y: 7 },
-                  { x: 1, y: 5 },
-                  { x: 2, y: 5 },
-                  { x: 3, y: 5 },
-                  { x: 4, y: 5 },
-                  { x: 5, y: 5 },
-                  { x: 6, y: 5 },
-                  { x: 6, y: 6 },
-                  { x: 5, y: 6 },
-                  { x: 4, y: 6 },
-                  { x: 5, y: 7 },
-                  { x: 6, y: 7 },
-                  { x: 6, y: 8 },
-                  { x: 5, y: 8 },
-                  { x: 5, y: 9 },
-                  { x: 5, y: 10 },
-                  { x: 5, y: 11 },
-                  { x: 5, y: 12 },
-                  { x: 5, y: 13 },
-                  { x: 5, y: 14 },
-                  { x: 5, y: 15 },
-                  { x: 5, y: 16 },
-                  { x: 5, y: 17 },
-                  { x: 5, y: 18 },
-                  { x: 5, y: 19 },
-                  { x: 6, y: 19 },
-                  { x: 6, y: 18 },
-                  { x: 6, y: 17 },
-                  { x: 7, y: 18 },
-                  { x: 7, y: 19 },
-                  { x: 6, y: 16 },
-                  { x: 7, y: 16 },
-                  { x: 7, y: 17 },
-                  { x: 6, y: 15 },
-                  { x: 6, y: 13 },
-                  { x: 6, y: 14 },
-                  { x: 6, y: 9 },
-                  { x: 6, y: 10 },
-                  { x: 6, y: 11 },
-                  { x: 6, y: 12 },
-                  { x: 7, y: 9 },
-                  { x: 7, y: 10 },
-                  { x: 7, y: 11 },
-                  { x: 7, y: 12 },
-                  { x: 7, y: 13 },
-                  { x: 7, y: 14 },
-                  { x: 7, y: 15 },
-                  { x: 8, y: 16 },
-                  { x: 9, y: 16 },
-                  { x: 9, y: 17 },
-                  { x: 9, y: 18 },
-                  { x: 9, y: 19 },
-                  { x: 8, y: 19 },
-                  { x: 8, y: 17 },
-                  { x: 8, y: 18 },
-                  { x: 7, y: 6 },
-                  { x: 7, y: 7 },
-                  { x: 8, y: 8 },
-                  { x: 9, y: 8 },
-                  { x: 9, y: 9 },
-                  { x: 8, y: 9 },
-                  { x: 8, y: 7 },
-                  { x: 1, y: 4 },
-                  { x: 2, y: 4 },
-                  { x: 3, y: 4 },
-                  { x: 4, y: 4 },
-                  { x: 5, y: 4 },
-                  { x: 6, y: 4 },
-                  { x: 7, y: 5 },
-                  { x: 8, y: 6 },
-                  { x: 9, y: 7 },
-                  { x: 1, y: 3 },
-                  { x: 2, y: 3 },
-                  { x: 3, y: 3 },
-                  { x: 4, y: 3 },
-                  { x: 5, y: 3 },
-                  { x: 6, y: 3 },
-                  { x: 7, y: 4 },
-                  { x: 8, y: 5 },
-                  { x: 9, y: 6 },
-                  { x: 1, y: 2 },
-                  { x: 2, y: 2 },
-                  { x: 3, y: 2 },
-                  { x: 4, y: 2 },
-                  { x: 5, y: 2 },
-                  { x: 6, y: 2 },
-                  { x: 7, y: 3 },
-                  { x: 8, y: 4 },
-                  { x: 9, y: 5 },
-                  { x: 1, y: 1 },
-                  { x: 2, y: 1 },
-                  { x: 3, y: 1 },
-                  { x: 4, y: 1 },
-                  { x: 5, y: 1 },
-                  { x: 6, y: 1 },
-                  { x: 7, y: 2 },
-                  { x: 8, y: 3 },
-                  { x: 9, y: 4 }
-            ],
-            change2: [
-                  { x: 0, y: 0 },
-                  { x: 0, y: 1 }
-            ],
+            change: [],
             screen: [
                   [
                         51.2,
@@ -1156,14 +979,14 @@ export default class SVGOverlayExample extends Component<{}> {
                         }, this.state.speed)
                   }
             } else if (this.state.mode === "2") {
-                  if (pos < this.state.change2.length) {
+                  if (pos < this.state.change.length) {
                         await this.setState({
                               screen2: this.state.screen2.map((arr, index) => {
                                     return arr.map((subarr, index2) => {
                                           if (
-                                                this.state.change2[pos].x ===
+                                                this.state.change[pos].x ===
                                                       index &&
-                                                this.state.change2[pos].y ===
+                                                this.state.change[pos].y ===
                                                       index2
                                           ) {
                                                 return "->"
@@ -1280,7 +1103,23 @@ export default class SVGOverlayExample extends Component<{}> {
                               ) : null}
                         </Map>
                         <button
-                              onClick={() => {
+                              onClick={async () => {
+                                    if (this.state.mode === "1") {
+                                          const res = await axios.get(
+                                                "https://panmap.herokuapp.com/"
+                                          )
+                                          await this.setState({
+                                                change: res.data
+                                          })
+                                    } else if (this.state.mode === "2") {
+                                          const res = await axios.get(
+                                                "https://panmap.herokuapp.com/screen2"
+                                          )
+                                          await this.setState({
+                                                change: res.data
+                                          })
+                                    }
+
                                     this.mapChange(0)
                               }}
                         >
