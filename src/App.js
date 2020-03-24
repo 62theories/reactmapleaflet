@@ -7,7 +7,9 @@ export default class App extends React.Component {
       render() {
             return (
                   <StrictMode>
-                        <Examples />
+                        <div style={{ marginTop: "40px" }}>
+                              <Examples />
+                        </div>
                   </StrictMode>
             )
       }
