@@ -1084,7 +1084,8 @@ export default class SVGOverlayExample extends Component<{}> {
                         37.1,
                         37.3
                   ]
-            ]
+            ],
+            speed: 1000
       }
 
       componentDidUpdate = (prepProps, prevState) => {
@@ -1152,7 +1153,7 @@ export default class SVGOverlayExample extends Component<{}> {
                         })
                         this.timer = setTimeout(() => {
                               this.mapChange(pos + 1)
-                        }, 1000)
+                        }, this.state.speed)
                   }
             } else if (this.state.mode === "2") {
                   if (pos < this.state.change2.length) {
@@ -1174,7 +1175,7 @@ export default class SVGOverlayExample extends Component<{}> {
                         })
                         setTimeout(() => {
                               this.mapChange(pos + 1)
-                        }, 1000)
+                        }, this.state.speed)
                   }
             }
       }
@@ -1284,6 +1285,12 @@ export default class SVGOverlayExample extends Component<{}> {
                               }}
                         >
                               test
+                        </button>
+                        <button onClick={() => this.setState({ speed: 100 })}>
+                              fast
+                        </button>
+                        <button onClick={() => this.setState({ speed: 5000 })}>
+                              slow
                         </button>
                   </>
             )
