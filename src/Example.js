@@ -12,6 +12,181 @@ const rectangle = [
 
 export default class SVGOverlayExample extends Component<{}> {
       state = {
+            mode: "0",
+            change: [
+                  { x: 0, y: 0 },
+                  { x: 0, y: 1 },
+                  { x: 0, y: 2 },
+                  { x: 0, y: 3 },
+                  { x: 0, y: 4 },
+                  { x: 0, y: 5 },
+                  { x: 0, y: 6 },
+                  { x: 0, y: 7 },
+                  { x: 0, y: 8 },
+                  { x: 0, y: 9 },
+                  { x: 0, y: 10 },
+                  { x: 0, y: 11 },
+                  { x: 0, y: 12 },
+                  { x: 0, y: 13 },
+                  { x: 0, y: 14 },
+                  { x: 0, y: 15 },
+                  { x: 0, y: 16 },
+                  { x: 0, y: 17 },
+                  { x: 0, y: 18 },
+                  { x: 0, y: 19 },
+                  { x: 1, y: 19 },
+                  { x: 1, y: 18 },
+                  { x: 1, y: 17 },
+                  { x: 1, y: 16 },
+                  { x: 2, y: 17 },
+                  { x: 2, y: 18 },
+                  { x: 2, y: 19 },
+                  { x: 1, y: 14 },
+                  { x: 1, y: 15 },
+                  { x: 2, y: 16 },
+                  { x: 2, y: 15 },
+                  { x: 1, y: 13 },
+                  { x: 2, y: 14 },
+                  { x: 1, y: 8 },
+                  { x: 1, y: 9 },
+                  { x: 1, y: 10 },
+                  { x: 1, y: 11 },
+                  { x: 1, y: 12 },
+                  { x: 2, y: 13 },
+                  { x: 2, y: 12 },
+                  { x: 2, y: 11 },
+                  { x: 2, y: 10 },
+                  { x: 2, y: 9 },
+                  { x: 1, y: 7 },
+                  { x: 2, y: 8 },
+                  { x: 3, y: 9 },
+                  { x: 3, y: 10 },
+                  { x: 4, y: 10 },
+                  { x: 4, y: 11 },
+                  { x: 4, y: 12 },
+                  { x: 3, y: 12 },
+                  { x: 3, y: 13 },
+                  { x: 3, y: 14 },
+                  { x: 3, y: 15 },
+                  { x: 3, y: 16 },
+                  { x: 3, y: 17 },
+                  { x: 3, y: 18 },
+                  { x: 3, y: 19 },
+                  { x: 4, y: 19 },
+                  { x: 4, y: 15 },
+                  { x: 4, y: 16 },
+                  { x: 4, y: 17 },
+                  { x: 4, y: 18 },
+                  { x: 4, y: 14 },
+                  { x: 4, y: 13 },
+                  { x: 3, y: 11 },
+                  { x: 1, y: 6 },
+                  { x: 2, y: 6 },
+                  { x: 3, y: 6 },
+                  { x: 3, y: 7 },
+                  { x: 2, y: 7 },
+                  { x: 3, y: 8 },
+                  { x: 4, y: 9 },
+                  { x: 4, y: 8 },
+                  { x: 4, y: 7 },
+                  { x: 1, y: 5 },
+                  { x: 2, y: 5 },
+                  { x: 3, y: 5 },
+                  { x: 4, y: 5 },
+                  { x: 5, y: 5 },
+                  { x: 6, y: 5 },
+                  { x: 6, y: 6 },
+                  { x: 5, y: 6 },
+                  { x: 4, y: 6 },
+                  { x: 5, y: 7 },
+                  { x: 6, y: 7 },
+                  { x: 6, y: 8 },
+                  { x: 5, y: 8 },
+                  { x: 5, y: 9 },
+                  { x: 5, y: 10 },
+                  { x: 5, y: 11 },
+                  { x: 5, y: 12 },
+                  { x: 5, y: 13 },
+                  { x: 5, y: 14 },
+                  { x: 5, y: 15 },
+                  { x: 5, y: 16 },
+                  { x: 5, y: 17 },
+                  { x: 5, y: 18 },
+                  { x: 5, y: 19 },
+                  { x: 6, y: 19 },
+                  { x: 6, y: 18 },
+                  { x: 6, y: 17 },
+                  { x: 7, y: 18 },
+                  { x: 7, y: 19 },
+                  { x: 6, y: 16 },
+                  { x: 7, y: 16 },
+                  { x: 7, y: 17 },
+                  { x: 6, y: 15 },
+                  { x: 6, y: 13 },
+                  { x: 6, y: 14 },
+                  { x: 6, y: 9 },
+                  { x: 6, y: 10 },
+                  { x: 6, y: 11 },
+                  { x: 6, y: 12 },
+                  { x: 7, y: 9 },
+                  { x: 7, y: 10 },
+                  { x: 7, y: 11 },
+                  { x: 7, y: 12 },
+                  { x: 7, y: 13 },
+                  { x: 7, y: 14 },
+                  { x: 7, y: 15 },
+                  { x: 8, y: 16 },
+                  { x: 9, y: 16 },
+                  { x: 9, y: 17 },
+                  { x: 9, y: 18 },
+                  { x: 9, y: 19 },
+                  { x: 8, y: 19 },
+                  { x: 8, y: 17 },
+                  { x: 8, y: 18 },
+                  { x: 7, y: 6 },
+                  { x: 7, y: 7 },
+                  { x: 8, y: 8 },
+                  { x: 9, y: 8 },
+                  { x: 9, y: 9 },
+                  { x: 8, y: 9 },
+                  { x: 8, y: 7 },
+                  { x: 1, y: 4 },
+                  { x: 2, y: 4 },
+                  { x: 3, y: 4 },
+                  { x: 4, y: 4 },
+                  { x: 5, y: 4 },
+                  { x: 6, y: 4 },
+                  { x: 7, y: 5 },
+                  { x: 8, y: 6 },
+                  { x: 9, y: 7 },
+                  { x: 1, y: 3 },
+                  { x: 2, y: 3 },
+                  { x: 3, y: 3 },
+                  { x: 4, y: 3 },
+                  { x: 5, y: 3 },
+                  { x: 6, y: 3 },
+                  { x: 7, y: 4 },
+                  { x: 8, y: 5 },
+                  { x: 9, y: 6 },
+                  { x: 1, y: 2 },
+                  { x: 2, y: 2 },
+                  { x: 3, y: 2 },
+                  { x: 4, y: 2 },
+                  { x: 5, y: 2 },
+                  { x: 6, y: 2 },
+                  { x: 7, y: 3 },
+                  { x: 8, y: 4 },
+                  { x: 9, y: 5 },
+                  { x: 1, y: 1 },
+                  { x: 2, y: 1 },
+                  { x: 3, y: 1 },
+                  { x: 4, y: 1 },
+                  { x: 5, y: 1 },
+                  { x: 6, y: 1 },
+                  { x: 7, y: 2 },
+                  { x: 8, y: 3 },
+                  { x: 9, y: 4 }
+            ],
             screen: [
                   [
                         51.2,
@@ -237,53 +412,118 @@ export default class SVGOverlayExample extends Component<{}> {
       }
 
       handleClick = e => {
-            console.log(e.latlng)
+            if (
+                  e.latlng.lat <= 7.896050847504184 &&
+                  e.latlng.lat >= 7.895240847504183 &&
+                  e.latlng.lng >= 98.35042685119629 &&
+                  e.latlng.lng <= 98.35213685119629
+            ) {
+                  if (this.state.mode !== "1") {
+                        this.setState({ mode: "1" })
+                  } else {
+                        this.setState({ mode: "0" })
+                  }
+            }
+      }
+
+      mapChange = async pos => {
+            if (this.state.mode === "1") {
+                  if (pos < this.state.change.length) {
+                        await this.setState({
+                              screen: this.state.screen.map((arr, index) => {
+                                    return arr.map((subarr, index2) => {
+                                          if (
+                                                this.state.change[pos].x ===
+                                                      index &&
+                                                this.state.change[pos].y ===
+                                                      index2
+                                          ) {
+                                                return "->"
+                                          }
+
+                                          return subarr
+                                    })
+                              })
+                        })
+                        setTimeout(() => {
+                              this.mapChange(pos + 1)
+                        }, 1000)
+                  }
+            }
       }
 
       render() {
             return (
-                  <Map center={center} zoom={20} onClick={this.handleClick}>
-                        <TileLayer
-                              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
-                        <SVGOverlay bounds={rectangle}>
-                              <rect
-                                    x="0"
-                                    y="0"
-                                    width="100%"
-                                    height="100%"
-                                    fill="white"
+                  <>
+                        <Map
+                              center={center}
+                              zoom={20}
+                              onClick={this.handleClick}
+                        >
+                              <TileLayer
+                                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                               />
-                              {this.state.screen.map((arr, indexx) => {
-                                    return (
-                                          <>
-                                                {arr.map((subarr, indexy) => {
+                              {this.state.mode === "1" ? (
+                                    <SVGOverlay bounds={rectangle}>
+                                          <rect
+                                                x="0"
+                                                y="0"
+                                                width="100%"
+                                                height="100%"
+                                                fill="white"
+                                          />
+                                          {this.state.screen.map(
+                                                (arr, indexx) => {
                                                       return (
-                                                            <text
-                                                                  fontSize="7"
-                                                                  x={`${indexy *
-                                                                        5}%`}
-                                                                  y={`${(indexx +
-                                                                        1) *
-                                                                        10}%`}
-                                                            >
-                                                                  {subarr
-                                                                        .toString()
-                                                                        .includes(
-                                                                              "."
-                                                                        )
-                                                                        ? subarr
-                                                                        : subarr +
-                                                                          ".0"}
-                                                            </text>
+                                                            <>
+                                                                  {arr.map(
+                                                                        (
+                                                                              subarr,
+                                                                              indexy
+                                                                        ) => {
+                                                                              return (
+                                                                                    <text
+                                                                                          fontSize="7"
+                                                                                          x={`${indexy *
+                                                                                                5}%`}
+                                                                                          y={`${(indexx +
+                                                                                                1) *
+                                                                                                10}%`}
+                                                                                    >
+                                                                                          {/* {subarr
+                                                                              .toString()
+                                                                              .includes(
+                                                                                    "."
+                                                                              )
+                                                                              ? subarr
+                                                                              : subarr +
+                                                                                ".0"} */}
+                                                                                          {subarr.toLocaleString(
+                                                                                                undefined,
+                                                                                                {
+                                                                                                      minimumFractionDigits: 1
+                                                                                                }
+                                                                                          )}
+                                                                                    </text>
+                                                                              )
+                                                                        }
+                                                                  )}
+                                                            </>
                                                       )
-                                                })}
-                                          </>
-                                    )
-                              })}
-                        </SVGOverlay>
-                  </Map>
+                                                }
+                                          )}
+                                    </SVGOverlay>
+                              ) : null}
+                        </Map>
+                        <button
+                              onClick={() => {
+                                    this.mapChange(0)
+                              }}
+                        >
+                              test
+                        </button>
+                  </>
             )
       }
 }
